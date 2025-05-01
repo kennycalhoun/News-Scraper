@@ -437,14 +437,14 @@ def lambda_handler(event, context):
             print(f"{ex}\n\n{traceback.format_exc()}")
             pass
         
-        try:
-            usaccidentlawyer_scrapper = USACCIDENTLAWYER_Scraper(db, pc_index)
-            usaccidentlawyer_related_articles = usaccidentlawyer_scrapper.run()
-            all_related_articles.extend(usaccidentlawyer_related_articles)
-        except Exception as ex:
-            # logging.exception(f"{ex}\n\n{traceback.format_exc()}")
-            print(f"{ex}\n\n{traceback.format_exc()}")
-            pass
+        # try:
+        #     usaccidentlawyer_scrapper = USACCIDENTLAWYER_Scraper(db, pc_index)
+        #     usaccidentlawyer_related_articles = usaccidentlawyer_scrapper.run()
+        #     all_related_articles.extend(usaccidentlawyer_related_articles)
+        # except Exception as ex:
+        #     # logging.exception(f"{ex}\n\n{traceback.format_exc()}")
+        #     print(f"{ex}\n\n{traceback.format_exc()}")
+        #     pass
 
         if all_related_articles:
             url = "https://lawbrothers.com/wp-json/lawbrother/v1/update-news/"
